@@ -1,0 +1,10 @@
+{
+  "port": "COM3",
+  "baudrate": "115200",
+  "databits": "8",
+  "stopbits": "1",
+  "parity": "None",
+  "hex_display": false,
+  "timestamp_display": false,
+  "hex_send": false
+}

@@ -1,0 +1,214 @@
+E:\python_project\tf_fire\myenv\Scripts\python.exe E:\Downloads\ChromeDownload\yoloface-50k-main\tensorflow\train_tf.py 
+开始TensorFlow版本的YOLO Face训练
+创建数据集...
+2025-11-21 21:58:10.129776: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From E:\python_project\tf_fire\myenv\lib\site-packages\tensorflow\python\autograph\pyct\static_analysis\liveness.py:83: Analyzer.lamba_check (from tensorflow.python.autograph.pyct.static_analysis.liveness) is deprecated and will be removed after 2023-09-23.
+Instructions for updating:
+Lambda fuctions will be no more assumed to be used in the statement where they are used, or at least in the same block. https://github.com/tensorflow/tensorflow/issues/56089
+初始化模型...
+2025-11-21 21:58:10.375399: I tensorflow/compiler/xla/service/service.cc:173] XLA service 0x2307ef4bab0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2025-11-21 21:58:10.375754: I tensorflow/compiler/xla/service/service.cc:181]   StreamExecutor device (0): Host, Default Version
+2025-11-21 21:58:10.394861: I tensorflow/compiler/jit/xla_compilation_cache.cc:477] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+WARNING:tensorflow:5 out of the last 5 calls to <function Conv._jit_compiled_convolution_op at 0x00000230316C88B8> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 6 calls to <function Conv._jit_compiled_convolution_op at 0x00000230316EA318> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+Model: "yolo_face"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ yolo_conv2d (YoloConv2D)    multiple                  248       
+                                                                 
+ depthwise_conv (DepthwiseCo  multiple                 152       
+ nv)                                                             
+                                                                 
+ yolo_conv2d_3 (YoloConv2D)  multiple                  144       
+                                                                 
+ depthwise_conv_1 (Depthwise  multiple                 366       
+ Conv)                                                           
+                                                                 
+ yolo_conv2d_6 (YoloConv2D)  multiple                  360       
+                                                                 
+ depthwise_conv_2 (Depthwise  multiple                 708       
+ Conv)                                                           
+                                                                 
+ yolo_conv2d_9 (YoloConv2D)  multiple                  180       
+                                                                 
+ max_pooling2d (MaxPooling2D  multiple                 0         
+ )                                                               
+                                                                 
+ yolo_conv2d_10 (YoloConv2D)  multiple                 960       
+                                                                 
+ depthwise_conv_3 (Depthwise  multiple                 536       
+ Conv)                                                           
+                                                                 
+ yolo_conv2d_13 (YoloConv2D)  multiple                 480       
+                                                                 
+ depthwise_conv_4 (Depthwise  multiple                 872       
+ Conv)                                                           
+                                                                 
+ yolo_conv2d_16 (YoloConv2D)  multiple                 480       
+                                                                 
+ depthwise_conv_5 (Depthwise  multiple                 872       
+ Conv)                                                           
+                                                                 
+ yolo_conv2d_19 (YoloConv2D)  multiple                 288       
+                                                                 
+ max_pooling2d_1 (MaxPooling  multiple                 0         
+ 2D)                                                             
+                                                                 
+ yolo_conv2d_20 (YoloConv2D)  multiple                 2080      
+                                                                 
+ depthwise_conv_6 (Depthwise  multiple                 1928      
+ Conv)                                                           
+                                                                 
+ yolo_conv2d_23 (YoloConv2D)  multiple                 648       
+                                                                 
+ yolo_layer (YoloLayer)      multiple                  0         
+                                                                 
+=================================================================
+Total params: 11,302
+Trainable params: 10,214
+Non-trainable params: 1,088
+_________________________________________________________________
+开始训练...
+Epoch 1/100, Train Loss: 759.4825, Val Loss: 11153.2879, LR: 0.001000, Time: 46.24s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 2/100, Train Loss: 370.3903, Val Loss: 11147.7664, LR: 0.001000, Time: 36.44s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+2025-11-21 22:00:02.418521: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:392] Filling up shuffle buffer (this may take a while): 3580 of 3672
+2025-11-21 22:00:02.724885: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:417] Shuffle buffer filled.
+Epoch 3/100, Train Loss: 279.4629, Val Loss: 7199.5523, LR: 0.000999, Time: 33.94s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 4/100, Train Loss: 259.5394, Val Loss: 5895.6823, LR: 0.000998, Time: 34.58s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 5/100, Train Loss: 250.6302, Val Loss: 5004.9388, LR: 0.000996, Time: 35.02s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 6/100, Train Loss: 246.0625, Val Loss: 4821.4130, LR: 0.000994, Time: 31.98s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 7/100, Train Loss: 242.8795, Val Loss: 4775.8050, LR: 0.000991, Time: 32.39s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 8/100, Train Loss: 240.6136, Val Loss: 4761.6531, LR: 0.000988, Time: 32.08s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 9/100, Train Loss: 238.8541, Val Loss: 4743.4625, LR: 0.000984, Time: 32.77s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 10/100, Train Loss: 237.9563, Val Loss: 4737.2163, LR: 0.000980, Time: 33.08s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+模型检查点已保存到 checkpoints\model_epoch_10
+优化器检查点已保存到 checkpoints\checkpoint_epoch_10
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 11/100, Train Loss: 238.1314, Val Loss: 4716.0179, LR: 0.000976, Time: 33.85s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 12/100, Train Loss: 237.4596, Val Loss: 4732.3162, LR: 0.000970, Time: 33.43s
+Epoch 13/100, Train Loss: 236.4148, Val Loss: 4709.2208, LR: 0.000965, Time: 33.71s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 14/100, Train Loss: 236.5026, Val Loss: 4709.5428, LR: 0.000959, Time: 35.25s
+2025-11-21 22:07:58.602164: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:392] Filling up shuffle buffer (this may take a while): 3651 of 3672
+2025-11-21 22:07:58.632032: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:417] Shuffle buffer filled.
+Epoch 15/100, Train Loss: 236.1787, Val Loss: 4711.7475, LR: 0.000952, Time: 35.63s
+2025-11-21 22:08:34.263023: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:392] Filling up shuffle buffer (this may take a while): 3531 of 3672
+2025-11-21 22:08:34.694614: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:417] Shuffle buffer filled.
+Epoch 16/100, Train Loss: 236.4953, Val Loss: 4707.1928, LR: 0.000946, Time: 36.76s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 17/100, Train Loss: 236.1505, Val Loss: 4706.3562, LR: 0.000938, Time: 35.88s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+2025-11-21 22:10:03.348239: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:392] Filling up shuffle buffer (this may take a while): 3245 of 3672
+2025-11-21 22:10:04.843093: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:417] Shuffle buffer filled.
+Epoch 18/100, Train Loss: 235.8930, Val Loss: 4702.6017, LR: 0.000930, Time: 36.42s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 19/100, Train Loss: 236.4546, Val Loss: 4703.5442, LR: 0.000922, Time: 34.55s
+Epoch 20/100, Train Loss: 235.3419, Val Loss: 4701.1916, LR: 0.000914, Time: 34.69s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+模型检查点已保存到 checkpoints\model_epoch_20
+优化器检查点已保存到 checkpoints\checkpoint_epoch_20
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 21/100, Train Loss: 235.7097, Val Loss: 4700.9229, LR: 0.000905, Time: 34.64s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 22/100, Train Loss: 234.9256, Val Loss: 4700.9037, LR: 0.000895, Time: 34.75s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 23/100, Train Loss: 235.6478, Val Loss: 4699.6911, LR: 0.000885, Time: 34.72s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 24/100, Train Loss: 235.2583, Val Loss: 4698.7616, LR: 0.000875, Time: 35.11s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 25/100, Train Loss: 235.3226, Val Loss: 4699.6308, LR: 0.000864, Time: 35.97s
+Epoch 26/100, Train Loss: 235.4374, Val Loss: 4698.2946, LR: 0.000854, Time: 35.98s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 27/100, Train Loss: 235.5636, Val Loss: 4698.7683, LR: 0.000842, Time: 35.28s
+Epoch 28/100, Train Loss: 235.1746, Val Loss: 4698.6318, LR: 0.000831, Time: 35.80s
+Epoch 29/100, Train Loss: 235.9096, Val Loss: 4697.9464, LR: 0.000819, Time: 35.61s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 30/100, Train Loss: 235.1350, Val Loss: 4697.7551, LR: 0.000806, Time: 35.60s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+模型检查点已保存到 checkpoints\model_epoch_30
+优化器检查点已保存到 checkpoints\checkpoint_epoch_30
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+2025-11-21 22:18:54.738959: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:392] Filling up shuffle buffer (this may take a while): 3648 of 3672
+2025-11-21 22:18:54.778691: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:417] Shuffle buffer filled.
+Epoch 31/100, Train Loss: 235.5857, Val Loss: 4697.6951, LR: 0.000794, Time: 36.79s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 32/100, Train Loss: 234.7670, Val Loss: 4697.5794, LR: 0.000781, Time: 37.50s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+2025-11-21 22:20:22.039270: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:392] Filling up shuffle buffer (this may take a while): 3521 of 3672
+2025-11-21 22:20:22.521642: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:417] Shuffle buffer filled.
+Epoch 33/100, Train Loss: 235.1974, Val Loss: 4697.8035, LR: 0.000768, Time: 37.65s
+Epoch 34/100, Train Loss: 235.6201, Val Loss: 4697.8065, LR: 0.000755, Time: 36.60s
+Epoch 35/100, Train Loss: 235.2965, Val Loss: 4697.4803, LR: 0.000741, Time: 36.89s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+Epoch 36/100, Train Loss: 235.3638, Val Loss: 4697.5227, LR: 0.000727, Time: 36.49s
+Epoch 37/100, Train Loss: 235.1635, Val Loss: 4697.2746, LR: 0.000713, Time: 36.32s
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 17). These functions will not be directly callable after loading.
+最佳模型已保存到 checkpoints\best_model
+最佳检查点已保存到 checkpoints\best_checkpoint
+2025-11-21 22:23:39.252109: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:392] Filling up shuffle buffer (this may take a while): 3561 of 3672
+2025-11-21 22:23:39.568491: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:417] Shuffle buffer filled.

@@ -1,0 +1,23 @@
+# TensorFlow 依赖
+tensorflow==2.10.0
+tensorflow-gpu==2.10.0  # 如使用GPU
+
+# 图像处理依赖
+opencv-python==4.6.0.66
+pillow==9.2.0
+
+# 数据分析和可视化
+numpy==1.23.4
+matplotlib==3.6.2
+scipy==1.9.3
+
+# 工具库
+tqdm==4.64.1
+pandas==1.5.1
+
+# 数据增强
+albumentations==1.2.1
+imgaug==0.4.0
+
+# 模型导出和优化
+tensorflow-model-optimization==0.7.3

@@ -1,0 +1,8 @@
+{
+  "port": "COM6",
+  "baudrate": "921600",
+  "format": "RGB565",
+  "width": "112",
+  "height": "112",
+  "scale": 2.7674418604651163
+}
